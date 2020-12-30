@@ -1,0 +1,127 @@
+" ALEX'S IDEAVIM CONFIG FILE
+"""""""""""""""""""" LINKS / DOCS """"""""""""""""""""
+
+" Readme
+" https://github.com/JetBrains/ideavim
+
+" Commands
+" https://github.com/JetBrains/ideavim/blob/master/src/com/maddyhome/idea/vim/package-info.java
+
+" Plugins
+" https://github.com/JetBrains/ideavim/blob/master/doc/emulated-plugins.md
+
+" Configs
+" https://github.com/JetBrains/ideavim/blob/master/doc/set-commands.md
+
+" Remember
+" Additional motions / text objects:
+"   s - Surround. Ex: cis" = change inside surrounding quotes
+"   a - Argument. Ex: cia = change inner (function) argument
+"   e - Entire bufer. ex: dae = delete all buffer (content)
+" Additional commands:
+"   gc<motion> - Comment. Ex: gcc = comment line
+"   gr<motion> - ReplaceWithRegister. Ex: grr = replace line with unnamed register
+"   cx<motion> - Exchange/Transpose. Ex: cxiw, (move to other word), . = swap two words. Also: cxc, X
+"   <A-n>, <A-x>, <A-p>, g<A-n> - Multiple cursors.
+
+"""""""""""""""""""" COMPATIBILITY """"""""""""""""""""
+
+source ~/.vimrc
+
+"""""""""""""""""""" PLUGINS """"""""""""""""""""
+
+set surround
+set multiple-cursors
+set commentary
+set argtextobj
+set easymotion
+set textobj-entire
+set ReplaceWithRegister
+
+" Configure EasyMotion
+let g:EasyMotion_smartcase=1
+
+" Configure argtextobj
+let g:argtextobj_pairs="[:],(:),<:>"
+
+"""""""""""""""""""" IDEAVIM SETTINGS """"""""""""""""""""
+
+set ideajoin
+set ideastatusicon=enabled
+set idearefactormode=keep
+
+"""""""""""""""""""" IDEAVIM MAPPINGS """"""""""""""""""""
+
+" Super useful commands in super easy keys
+noremap <CR>      :action ShowIntentionActions<CR>
+noremap \         :action GotoAction<CR>
+noremap ,         :action Back<CR>
+noremap <Leader>/ :action FindInPath<CR>
+map ç <Plug>(easymotion-s)
+
+" Refactor code
+noremap <Leader>rr :action RefactoringMenu<CR>
+noremap <Leader>rt :action Refactorings.QuickListPopupAction<CR>
+noremap <Leader>ra :action AnalyzeMenu<CR>
+noremap <Leader>re :action RenameElement<CR>
+noremap <Leader>rm :action Move<CR>
+noremap <Leader>ri :action Inline<CR>
+noremap <Leader>rs :action SurroundWith<CR>
+
+" Introspect code
+noremap <Leader>ii :action QuickActions<CR>
+noremap <Leader>id :action QuickJavaDoc<CR>
+noremap <Leader>ip :action ParameterInfo<CR>
+noremap <Leader>iu :action FindUsages<CR>
+noremap <Leader>ic :action CallHierarchy<CR>
+noremap <Leader>im :action MethodHierarchy<CR>
+noremap <Leader>it :action TypeHierarchy<CR>
+
+" GoTo (say where)
+"" gg == go to line
+noremap go        :action GotoClass<CR>
+noremap gp        :action GotoFile<CR>
+noremap ga        :action GotoSymbol<CR>
+
+" Jump (under cursor)
+"" gf == jump to file path
+"" gt == jump to (last) tab
+"" gd == jump to declaration (or usage)
+noremap gi        :action GotoImplementation<CR>
+noremap gu        :action ShowUsages<CR>
+noremap gy        :action GotoTypeDeclaration<CR>
+noremap gs        :action GotoSuperMethod<CR>
+noremap gt        :action GotoTest<CR>
+noremap ge        :action JumpToLastChange<CR>
+
+" Tabs related
+noremap <Leader>tt  :action TabList<CR>
+noremap <Leader>te  :action OpenFile<CR>
+noremap <Leader>tc  :action CloseContent<CR>
+noremap <Leader>to  :action CloseAllEditorsButActive<CR>
+noremap <Leader>tn  :action NextTab<CR>
+noremap <Leader>tp  :action PreviousTab<CR>
+noremap <Leader>tr  :action ReopenClosedTab<CR>
+
+" Windows related
+"" <Leader>ww == other splitter
+"" <Leader>we == split vertical
+"" <Leader>ws == split horizontal
+"" <Leader>wc == close splitter
+"" <Leader>wo == close others
+noremap <Leader>wp  :action MoveTabRight<CR>
+noremap <Leader>wd  :action MoveTabDown<CR>
+noremap <Leader>wr  :action MoveEditorToOppositeTabGroup<CR>
+
+" Buffers related (recently visited)
+noremap s           :action RecentFiles<CR>
+noremap <Leader>bb  :action Switcher<CR>
+noremap <Leader>bf  :action RecentChangedFiles<CR>
+noremap <Leader>be  :action RecentLocations<CR>
+noremap <Leader>br  :action RecentChanges<CR>
+
+" Reset Caps =>  Control
+noremap
+
+" Pending
+" Git related (Annotate, GitFileActions, GitRepositoryActions, Git.ResolveConflicts)
