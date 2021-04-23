@@ -38,19 +38,7 @@ formulas=(
   borkdude/brew/clj-kondo
   golang
   rust
-)
-
-for formula in "${formulas[@]}"; do
-  if brew list "$formula" >/dev/null 2>&1; then
-    echo "$formula already installed... skipping."
-  else
-    brew install $formula
-  fi
-done
-
-echo -e "\nInstalling homebrew casks..."
-echo "=============================="
-casks=(
+# === cask === #
   squirrel
   upic
   dash
@@ -59,10 +47,10 @@ casks=(
   bob
 )
 
-for cask in "${casks[@]}"; do
-  if brew cask list "$cask" >/dev/null 2>&1; then
-    echo "$cask already installed... skipping."
+for formula in "${formulas[@]}"; do
+  if brew list "$formula" >/dev/null 2>&1; then
+    echo "$formula already installed... skipping."
   else
-    brew cask install $cask
+    brew install $formula
   fi
 done
