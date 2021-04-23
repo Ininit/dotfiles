@@ -1,0 +1,6 @@
+[submodule "raycast/script-commands"]
+	path = raycast/script-commands
+	url = https://github.com/raycast/script-commands.git
+[submodule "tmux/plugins/tpm"]
+	path = tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm

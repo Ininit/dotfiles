@@ -1,0 +1,15 @@
+# This is Git's per-user configuration file.
+[user]
+	name = ininit
+	email = meininit@gmail.com
+[core]
+ignoreCase = false
+excludesfile = ~/.gitignore_global
+[push]
+default = current
+
+# [includeIf "gitdir:~/Documents/workspace/"]
+# path = ~/Documents/workspace/.gitconfig
+
+[include]
+path = ~/.gitconfig_proxy

@@ -1,0 +1,5 @@
+name: project
+root: ~/
+
+windows:
+  - base: clear
