@@ -1,6 +1,7 @@
 config/fish/fishd.*
 vim/plugged/
 vim/sessions/
+vim/autoload/
 config/fish/fish_variables
 config/fish/proxy.fish
 .vimworkspace
