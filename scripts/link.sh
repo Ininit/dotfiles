@@ -50,3 +50,14 @@ for file in "${VIMFILES[@]}"; do
     ln -s ${VALUE} ${KEY}
   fi
 done
+
+echo -e "\nLink OMF default theme"
+echo "=============================="
+DEFAULT_THEME_PATH=$HOME/.local/share/omf/themes/default/functions/fish_prompt.fish
+LINK_THEME_PATH=$DOTFILES/config/fish/functions/fish_prompt.finsh
+
+if [ -e ${DEFAULT_THEME_PATH} ]; then
+  ln -s ${DEFAULT_THEME_PATH} ${LINK_THEME_PATH}
+else
+  echo "OMF not installed..."
+fi
