@@ -39,6 +39,7 @@ formulas=(
   golang
   rust
   autojump
+  urlview
 # === cask === #
   squirrel
   upic
