@@ -65,7 +65,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'mattn/emmet-vim'
   Plug 'neoclide/coc.nvim', { 'do': 'yarn install' }
   Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'}
-
+  Plug 'yuttie/comfortable-motion.vim'
   Plug 'nathangrigg/vim-beancount'
 call plug#end()
 
@@ -329,3 +329,11 @@ call coc#add_extension(
   \ 'coc-lists',
   \ 'coc-tabnine'
   \ )
+
+" comfortable-motion.vim
+let g:comfortable_motion_no_default_key_mappings = 1
+let g:comfortable_motion_impulse_multiplier = 1  " Feel free to increase/decrease this value.
+nnoremap <silent> <C-d> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * 2)<CR>
+nnoremap <silent> <C-u> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * -2)<CR>
+nnoremap <silent> <C-f> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * 4)<CR>
+nnoremap <silent> <C-b> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * -4)<CR>
