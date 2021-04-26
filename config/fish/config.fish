@@ -18,6 +18,7 @@ end
 
 source $DOTFILES/config/fish/aliases.fish
 source $DOTFILES/config/fish/path.fish
+source $DOTFILES/config/fish/autojump.fish
 
 if test -e $DOTFILES/config/fish/proxy.fish
   source $DOTFILES/config/fish/proxy.fish

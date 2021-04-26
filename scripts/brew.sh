@@ -38,6 +38,7 @@ formulas=(
   borkdude/brew/clj-kondo
   golang
   rust
+  autojump
 # === cask === #
   squirrel
   upic
