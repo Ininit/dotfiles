@@ -10,7 +10,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'scrooloose/nerdcommenter'
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-repeat'
-  Plug 'easymotion/vim-easymotion'
+  Plug 'asvetliakov/vim-easymotion', { 'dir': '~/.vim/plugged/vscode-vim-easymotion' }
   Plug 'chaoren/vim-wordmotion'
   Plug 'kana/vim-textobj-user'
   Plug 'sgur/vim-textobj-parameter'
