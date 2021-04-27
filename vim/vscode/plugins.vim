@@ -27,9 +27,6 @@ nnoremap <silent> <Leader>pu :PlugUpdate<Cr>
 let g:NERDSpaceDelims = 1
 let g:NERDDefaultNesting = 1
 let g:NERDDefaultAlign = 'left'
-let g:NERDCustomDelimiters = {
-  \   'clojure': { 'left': ';;' },
-  \ }
 
 " vim-surround
 nmap <silent> , ysiw

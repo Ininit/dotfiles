@@ -1,1 +1,1 @@
-/Users/ininit/.local/share/omf/themes/default/functions/fish_prompt.fish
+/Users/jiatui/.local/share/omf/themes/default/functions/fish_prompt.fish

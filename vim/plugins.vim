@@ -66,8 +66,14 @@ call plug#begin('~/.vim/plugged')
   Plug 'neoclide/coc.nvim', { 'do': 'yarn install' }
   Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'}
   Plug 'yuttie/comfortable-motion.vim'
+  Plug 'scrooloose/nerdtree'
+
   Plug 'nathangrigg/vim-beancount'
 call plug#end()
+
+nmap <C-n> :NERDTreeToggle<CR>
+vmap ++ <plug>NERDCommenterToggle
+nmap ++ <plug>NERDCommenterToggle
 
 nnoremap <silent> <Leader>pi :PlugInstall<CR>
 nnoremap <silent> <Leader>pc :PlugClean<CR>
