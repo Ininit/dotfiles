@@ -23,3 +23,14 @@ source $DOTFILES/config/fish/autojump.fish
 if test -e $DOTFILES/config/fish/proxy.fish
   source $DOTFILES/config/fish/proxy.fish
 end
+
+# nvm
+function nvm
+  if not type -q bass
+    echo 'Bass is not installed please install it running fisher edc/bass'
+    return
+  end
+  set -q NVM_DIR; or set -gx NVM_DIR ~/.nvm
+  set -q nvm_prefix; or set -gx nvm_prefix $NVM_DIR
+  bass source $nvm_prefix/nvm.sh --no-use ';' nvm $argv
+end
