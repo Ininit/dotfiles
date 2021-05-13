@@ -14,11 +14,11 @@ nnoremap gj j
 
 noremap H ^
 noremap L $
-nnoremap J G
-nnoremap K gg
+nnoremap J 10j
+nnoremap K 10k
 
-vnoremap J G
-vnoremap K gg
+vnoremap J 10j
+vnoremap K 10k
 
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
