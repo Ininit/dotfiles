@@ -18,3 +18,4 @@ alias gca 'git commit --amend'
 # better command
 alias cat  'bat'
 alias find 'fd'
+alias top 'htop'

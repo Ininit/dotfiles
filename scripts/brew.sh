@@ -33,6 +33,7 @@ formulas=(
   fx
   bat
   fd
+  htop
   reattach-to-user-namespace
   ctags
   borkdude/brew/clj-kondo
