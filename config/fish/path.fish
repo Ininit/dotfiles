@@ -1,5 +1,5 @@
 # ========== MIRROR ========== #
-
+set -x PATH "/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/sbin" $PATH
 
 # ========== PATH ========== #
 if test -d /usr/local/sbin
@@ -36,4 +36,9 @@ end
 # go
 if test -d /usr/local/go/bin
   set -gx fish_user_paths /usr/local/go/bin $fish_user_paths
+end
+
+# yarn
+if test -d $HOME/.yarn/bin
+  set -gx fish_user_paths $HOME/.yarn/bin $fish_user_paths
 end
