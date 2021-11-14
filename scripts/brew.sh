@@ -48,6 +48,7 @@ formulas=(
   wireshark
   raycast
   bob
+  obsidian
 )
 
 for formula in "${formulas[@]}"; do
