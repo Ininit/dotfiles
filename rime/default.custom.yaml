@@ -30,5 +30,5 @@ patch:
     Control_L: noop
     Control_R: noop
     # 按下左 shift 英文字符直接上屏，不需要再次回车，输入法保持英文状态
-    Shift_L: commit_code
-    Shift_R: noop
+    Shift_L: noop
+    Shift_R: commit_code
