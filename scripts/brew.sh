@@ -49,6 +49,7 @@ formulas=(
   raycast
   bob
   obsidian
+  iterm2
 )
 
 for formula in "${formulas[@]}"; do
