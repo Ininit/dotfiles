@@ -25,11 +25,10 @@ nnoremap <silent> <C-k> :<C-u>call VSCodeNotify('workbench.action.focusAboveGrou
 nnoremap <silent> <C-h> :<C-u>call VSCodeNotify('workbench.action.focusLeftGroup')<CR>
 nnoremap <silent> <C-l> :<C-u>call VSCodeNotify('workbench.action.focusRightGroup')<CR>
 
-nnoremap <silent> <Leader>f :<C-u>call VSCodeNotify('editor.action.formatDocument')<CR>
+" nnoremap <silent> <Leader>f :<C-u>call VSCodeNotify('editor.action.formatDocument')<CR>
 
 " Jump
 nnoremap <silent> gi :<C-u>call VSCodeNotify('editor.action.goToImplementation')<CR>
 nnoremap <silent> gu :<C-u>call VSCodeNotify('editor.action.goToReferences')<CR>
 nnoremap <silent> gd :<C-u>call VSCodeNotify('editor.action.revealDefinition')<CR>
-nnoremap <silent> gt :<C-u>call VSCodeNotify('editor.action.goToTypeDefinition')<CR>
-
+" nnoremap <silent> gt :<C-u>call VSCodeNotify('editor.action.goToTypeDefinition')<CR>
