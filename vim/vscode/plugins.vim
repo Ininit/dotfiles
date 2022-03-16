@@ -18,6 +18,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'yuttie/comfortable-motion.vim'
   Plug 'mattn/emmet-vim'
   Plug 'posva/vim-vue'
+  Plug 'unblevable/quick-scope'
 call plug#end()
 
 nnoremap <silent> <Leader>pi :PlugInstall<Cr>
@@ -64,10 +65,10 @@ let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_grouping = 2
 let g:EasyMotion_smartcase = 1
 
-" vim-textobj-parameter
+" vim-textobj-parameter 拓展文本对象
 let g:vim_textobj_parameter_mapping = 'a'
 
-" vim-doge
+" vim-doge 注释
 let g:doge_mapping = '<Leader>dc'
 
 " comfortable-motion.vim

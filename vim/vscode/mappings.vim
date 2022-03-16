@@ -31,5 +31,5 @@ nnoremap <silent> <Leader>f :<C-u>call VSCodeNotify('editor.action.formatDocumen
 nnoremap <silent> gi :<C-u>call VSCodeNotify('editor.action.goToImplementation')<CR>
 nnoremap <silent> gu :<C-u>call VSCodeNotify('editor.action.goToReferences')<CR>
 nnoremap <silent> gd :<C-u>call VSCodeNotify('editor.action.revealDefinition')<CR>
-nnoremap <silent> gt :<C-u>call VSCodeNotify('editor.action.goToTypeDefinition')<CR>
+" nnoremap <silent> gt :<C-u>call VSCodeNotify('editor.action.goToTypeDefinition')<CR>
 

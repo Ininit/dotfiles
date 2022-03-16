@@ -42,3 +42,9 @@ end
 if test -d $HOME/.yarn/bin
   set -gx fish_user_paths $HOME/.yarn/bin $fish_user_paths
 end
+
+# auto-npx
+if test $TERM_PROGRAM = "vscode" 
+  and test -d "$PWD/node_modules/.bin"
+  fish_add_path $PWD/node_modules/.bin
+end

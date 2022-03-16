@@ -34,3 +34,12 @@ function nvm
   set -q nvm_prefix; or set -gx nvm_prefix $NVM_DIR
   bass source $nvm_prefix/nvm.sh --no-use ';' nvm $argv
 end
+set -gx VOLTA_HOME "$HOME/.volta"
+set -gx PATH "$VOLTA_HOME/bin" $PATH
+fish_add_path /opt/homebrew/sbin
+
+# conda
+source ~/miniforge3/etc/fish/conf.d/conda.fish
+
+# default proxy
+set -xg ALL_PROXY http://localhost:7890
