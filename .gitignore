@@ -6,3 +6,4 @@ config/fish/fish_variables
 config/fish/proxy.fish
 .vimworkspace
 .undodir
+.DS_Store
