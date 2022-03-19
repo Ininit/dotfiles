@@ -3,6 +3,11 @@
 RIME_CONFIG=$HOME/Library/Rime
 
 for config in $DOTFILES/rime/*; do
+
+  if [ $config = $DOTFILES/rime/font ]; then
+    continue
+  fi
+
   filename="$(basename $config)"
   target="$RIME_CONFIG/$filename"
   if [ -e $target ]; then
