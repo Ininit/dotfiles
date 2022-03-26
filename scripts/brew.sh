@@ -41,6 +41,7 @@ formulas=(
   rust
   autojump
   urlview
+  starship
 # === cask === #
   squirrel
   upic

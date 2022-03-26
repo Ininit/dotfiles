@@ -43,3 +43,6 @@ source ~/miniforge3/etc/fish/conf.d/conda.fish
 
 # default proxy
 set -xg ALL_PROXY http://localhost:7890
+
+# starship
+starship init fish | source
