@@ -70,6 +70,8 @@ call plug#begin('~/.vim/plugged')
 
   Plug 'nathangrigg/vim-beancount'
   Plug 'posva/vim-vue'
+  Plug 'github/copilot.vim'
+  
 call plug#end()
 
 nmap <C-n> :NERDTreeToggle<CR>
