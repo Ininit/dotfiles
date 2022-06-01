@@ -24,6 +24,7 @@ formulas=(
   fish
   ripgrep
   fzf
+  exa
   tmux
   git
   tree
@@ -42,6 +43,7 @@ formulas=(
   autojump
   urlview
   starship
+  colima
 # === cask === #
   squirrel
   upic
