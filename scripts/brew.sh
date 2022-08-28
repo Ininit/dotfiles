@@ -40,7 +40,6 @@ formulas=(
   borkdude/brew/clj-kondo
   golang
   rust
-  autojump
   urlview
   starship
   colima

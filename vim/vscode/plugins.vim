@@ -18,7 +18,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'yuttie/comfortable-motion.vim'
   Plug 'mattn/emmet-vim'
   Plug 'posva/vim-vue'
-  Plug 'unblevable/quick-scope'
 call plug#end()
 
 nnoremap <silent> <Leader>pi :PlugInstall<Cr>

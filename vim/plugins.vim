@@ -72,6 +72,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'posva/vim-vue'
   Plug 'github/copilot.vim'
   
+  Plug 'gcmt/wildfire.vim'
+  
 call plug#end()
 
 nmap <C-n> :NERDTreeToggle<CR>

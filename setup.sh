@@ -12,6 +12,13 @@ chsh -s /opt/homebrew/bin/fish
 curl -L https://get.oh-my.fish | fish
 echo /opt/homebrew/bin/fish | sudo tee -a /etc/shells
 
+#finser
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+
+# fish plugin
+fisher install jethrokuan/z
+
+
 source $DOTFILES/scripts/link.sh
 
 if [[ "$OSTYPE" == "darwin"* ]]; then

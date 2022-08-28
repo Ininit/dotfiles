@@ -18,7 +18,6 @@ end
 
 source $DOTFILES/config/fish/aliases.fish
 source $DOTFILES/config/fish/path.fish
-source $DOTFILES/config/fish/autojump.fish
 
 if test -e $DOTFILES/config/fish/proxy.fish
   source $DOTFILES/config/fish/proxy.fish
@@ -36,7 +35,6 @@ function nvm
 end
 set -gx VOLTA_HOME "$HOME/.volta"
 set -gx PATH "$VOLTA_HOME/bin" $PATH
-fish_add_path /opt/homebrew/sbin
 
 # conda
 source ~/miniforge3/etc/fish/conf.d/conda.fish
@@ -46,3 +44,6 @@ set -xg ALL_PROXY http://localhost:7890
 
 # starship
 starship init fish | source
+
+set -gx PNPM_HOME "/Users/ininit/Library/pnpm"
+set -gx PATH "$PNPM_HOME" $PATH
