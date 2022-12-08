@@ -32,26 +32,28 @@ local function spec(use)
 			end,
 		},
 	})
+
+	
 	
 	-- Movement
 	use({ 'chaoren/vim-wordmotion' })
-  use({ 'justinmk/vim-sneak' }) -- s key 被占用了
-	
+
+	use { 'ggandor/lightspeed.nvim', config = [[require('config.lightspeed')]] }
+
 	-- Text
-	use({ 'wellle/targets.vim' }) -- iA 
+	use({ 'wellle/targets.vim' }) -- iA https://github.com/wellle/targets.vim
 	
 	-- Commenting
   use({
-    'numToStr/Comment.nvim', -- 对 vue script 配置不详
-    config = function()
-      require('Comment').setup {}
-    end,
+    'numToStr/Comment.nvim', 
+    config = [[require('config.comment')]]
   })
 
 	-- Wrapping/delimiters
-  use({
-    'machakann/vim-sandwich',
-  })
+	use({
+		'machakann/vim-sandwich',
+  	config = [[require('config.sandwich')]]
+	})
 	
 	use({
 		'andymass/vim-matchup',  -- % 切换

@@ -9,23 +9,26 @@ vim.api.nvim_command('packadd packer.nvim')
 
 local no_errors, error_msg = pcall(function()
 
-  local time
-  local profile_info
-  local should_profile = false
-  if should_profile then
-    local hrtime = vim.loop.hrtime
-    profile_info = {}
-    time = function(chunk, start)
-      if start then
-        profile_info[chunk] = hrtime()
-      else
-        profile_info[chunk] = (hrtime() - profile_info[chunk]) / 1e6
-      end
+_G._packer = _G._packer or {}
+_G._packer.inside_compile = true
+
+local time
+local profile_info
+local should_profile = false
+if should_profile then
+  local hrtime = vim.loop.hrtime
+  profile_info = {}
+  time = function(chunk, start)
+    if start then
+      profile_info[chunk] = hrtime()
+    else
+      profile_info[chunk] = (hrtime() - profile_info[chunk]) / 1e6
     end
-  else
-    time = function(chunk, start) end
   end
-  
+else
+  time = function(chunk, start) end
+end
+
 local function save_profiles(threshold)
   local sorted_times = {}
   for chunk_name, time_taken in pairs(profile_info) do
@@ -38,8 +41,10 @@ local function save_profiles(threshold)
       results[i] = elem[1] .. ' took ' .. elem[2] .. 'ms'
     end
   end
+  if threshold then
+    table.insert(results, '(Only showing plugins that took longer than ' .. threshold .. ' ms ' .. 'to load)')
+  end
 
-  _G._packer = _G._packer or {}
   _G._packer.profile_output = results
 end
 
@@ -80,6 +85,12 @@ _G.packer_plugins = {
     path = "/Users/ininit/.local/share/nvim/site/pack/packer/start/impatient.nvim",
     url = "https://github.com/lewis6991/impatient.nvim"
   },
+  ["lightspeed.nvim"] = {
+    config = { "require('config.lightspeed')" },
+    loaded = true,
+    path = "/Users/ininit/.local/share/nvim/site/pack/packer/start/lightspeed.nvim",
+    url = "https://github.com/ggandor/lightspeed.nvim"
+  },
   ["targets.vim"] = {
     loaded = true,
     path = "/Users/ininit/.local/share/nvim/site/pack/packer/start/targets.vim",
@@ -104,14 +115,10 @@ _G.packer_plugins = {
     url = "https://github.com/tpope/vim-repeat"
   },
   ["vim-sandwich"] = {
+    config = { "require('config.sandwich')" },
     loaded = true,
     path = "/Users/ininit/.local/share/nvim/site/pack/packer/start/vim-sandwich",
     url = "https://github.com/machakann/vim-sandwich"
-  },
-  ["vim-sneak"] = {
-    loaded = true,
-    path = "/Users/ininit/.local/share/nvim/site/pack/packer/start/vim-sneak",
-    url = "https://github.com/justinmk/vim-sneak"
   },
   ["vim-wordmotion"] = {
     loaded = true,
@@ -128,14 +135,29 @@ time([[Setup for vim-matchup]], false)
 time([[packadd for vim-matchup]], true)
 vim.cmd [[packadd vim-matchup]]
 time([[packadd for vim-matchup]], false)
--- Config for: vim-eft
-time([[Config for vim-eft]], true)
-try_loadstring("\27LJ\2\n•\2\0\0\6\0\16\0!6\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0'\4\5\0005\5\6\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\a\0'\4\b\0005\5\t\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\n\0'\4\v\0005\5\f\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\r\0'\4\14\0005\5\15\0B\0\5\1K\0\1\0\1\0\1\fnoremap\1\18<Plug>(eft-T)\6T\1\0\1\fnoremap\1\18<Plug>(eft-t)\6t\1\0\1\fnoremap\1\18<Plug>(eft-F)\6F\1\0\1\fnoremap\1\18<Plug>(eft-f)\6f\6n\20nvim_set_keymap\bapi\bvim\0", "config", "vim-eft")
-time([[Config for vim-eft]], false)
+-- Config for: vim-sandwich
+time([[Config for vim-sandwich]], true)
+require('config.sandwich')
+time([[Config for vim-sandwich]], false)
 -- Config for: Comment.nvim
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
 time([[Config for Comment.nvim]], false)
+-- Config for: lightspeed.nvim
+time([[Config for lightspeed.nvim]], true)
+require('config.lightspeed')
+time([[Config for lightspeed.nvim]], false)
+-- Config for: vim-eft
+time([[Config for vim-eft]], true)
+try_loadstring("\27LJ\2\n•\2\0\0\6\0\16\0!6\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0'\4\5\0005\5\6\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\a\0'\4\b\0005\5\t\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\n\0'\4\v\0005\5\f\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\r\0'\4\14\0005\5\15\0B\0\5\1K\0\1\0\1\0\1\fnoremap\1\18<Plug>(eft-T)\6T\1\0\1\fnoremap\1\18<Plug>(eft-t)\6t\1\0\1\fnoremap\1\18<Plug>(eft-F)\6F\1\0\1\fnoremap\1\18<Plug>(eft-f)\6f\6n\20nvim_set_keymap\bapi\bvim\0", "config", "vim-eft")
+time([[Config for vim-eft]], false)
+
+_G._packer.inside_compile = false
+if _G._packer.needs_bufread == true then
+  vim.cmd("doautocmd BufRead")
+end
+_G._packer.needs_bufread = false
+
 if should_profile then save_profiles() end
 
 end)
