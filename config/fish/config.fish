@@ -19,8 +19,8 @@ end
 source $DOTFILES/config/fish/aliases.fish
 source $DOTFILES/config/fish/path.fish
 
-if test -e $DOTFILES/config/fish/proxy.fish
-  source $DOTFILES/config/fish/proxy.fish
+if test -e $DOTFILES/config/fish/functions/proxy.fish
+  source $DOTFILES/config/fish/functions/proxy.fish
 end
 
 # nvm
@@ -40,7 +40,7 @@ set -gx PATH "$VOLTA_HOME/bin" $PATH
 source ~/miniforge3/etc/fish/conf.d/conda.fish
 
 # default proxy
-set -xg ALL_PROXY http://localhost:7890
+# set -xg ALL_PROXY http://localhost:7890
 
 # starship
 starship init fish | source
