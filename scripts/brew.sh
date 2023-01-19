@@ -43,6 +43,7 @@ formulas=(
   urlview
   starship
   colima
+  poetry # python 包管理工具
 # === cask === #
   squirrel
   upic
@@ -51,6 +52,7 @@ formulas=(
   raycast
   bob
   obsidian
+  dozer
 )
 
 for formula in "${formulas[@]}"; do
