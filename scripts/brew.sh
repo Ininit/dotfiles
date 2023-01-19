@@ -24,6 +24,7 @@ formulas=(
   fish
   ripgrep
   fzf
+  exa
   tmux
   git
   tree
@@ -39,8 +40,11 @@ formulas=(
   borkdude/brew/clj-kondo
   golang
   rust
-  autojump
   urlview
+  starship
+  colima
+  poetry # python 包管理工具
+  tealdeer # tldr
 # === cask === #
   squirrel
   upic
@@ -49,7 +53,7 @@ formulas=(
   raycast
   bob
   obsidian
-  iterm2
+  dozer # 隐藏菜单栏图标
 )
 
 for formula in "${formulas[@]}"; do
