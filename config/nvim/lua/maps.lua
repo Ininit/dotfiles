@@ -51,6 +51,10 @@ if vim.g.vscode then
   set_keymap('n', '<C-j>', ':<C-u>call VSCodeNotify("workbench.action.focusBelowGroup")<CR>', opts)
   set_keymap('n', '<C-k>', ':<C-u>call VSCodeNotify("workbench.action.focusAboveGroup")<CR>', opts)
   set_keymap('n', '<C-l>', ':<C-u>call VSCodeNotify("workbench.action.focusRightGroup")<CR>', opts)
+  
+  -- diff
+  set_keymap('n', ']c', ':<C-u>call VSCodeNotify("gitlens.diffWithNext")<CR>', opts)
+  set_keymap('n', '[c', ':<C-u>call VSCodeNotify("gitlens.diffWithPrevious")<CR>', opts)
 else
   -- New tab
   set_keymap('n', 'te', ':tabedit', opts)
