@@ -44,6 +44,7 @@ formulas=(
   starship
   colima
   poetry # python 包管理工具
+  tealdeer # tldr
 # === cask === #
   squirrel
   upic
@@ -52,7 +53,7 @@ formulas=(
   raycast
   bob
   obsidian
-  dozer
+  dozer # 隐藏菜单栏图标
 )
 
 for formula in "${formulas[@]}"; do
