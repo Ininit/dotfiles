@@ -18,6 +18,6 @@ alias gca 'git commit --amend'
 # better command
 alias cat  'bat'
 alias find 'fd'
-alias top 'htop'
+alias top 'btop'
 # alias grep 'ripgrep'
 alias ls  'exa'
