@@ -47,3 +47,7 @@ starship init fish | source
 
 set -gx PNPM_HOME "/Users/ininit/Library/pnpm"
 set -gx PATH "$PNPM_HOME" $PATH
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
