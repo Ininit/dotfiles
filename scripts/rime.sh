@@ -2,9 +2,9 @@
 
 RIME_CONFIG=$HOME/Library/Rime
 
-for config in $DOTFILES/rime/*; do
+for config in $DOTFILES/rime-ice/*; do
 
-  if [ $config = $DOTFILES/rime/font ]; then
+  if [ $config = $DOTFILES/rime-ice/font ]; then
     continue
   fi
 
